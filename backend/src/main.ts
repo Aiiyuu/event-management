@@ -7,11 +7,11 @@ async function bootstrap() {
 
   app.setGlobalPrefix('api');
 
-  const allowedOrigins = process.env.ALLOWED_ORIGINS
-    ? process.env.ALLOWED_ORIGINS.split(',')
-    : ['http://localhost:3001'];
+  app.enableCors({
+    origin: ['http://localhost:3001', 'http://192.168.0.177:3001'],
+    credentials: true,
+  });
 
-  app.enableCors({ origin: allowedOrigins });
   app.useGlobalPipes(new AppValidationPipe());
 
   const port = process.env.PORT ?? 3000;
