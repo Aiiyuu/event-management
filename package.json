@@ -14,6 +14,10 @@
     "backend/**/*.{js,ts}": [
       "npm --prefix backend run lint",
       "npm --prefix backend run format"
+    ],
+    "frontend/**/*.{js,ts,jsx,tsx}": [
+      "npm --prefix frontend run lint",
+      "npm --prefix frontend run format"
     ]
   },
   "keywords": [],
