@@ -1,0 +1,35 @@
+{
+  "name": "event-management",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aiiyuu/event-management.git"
+  },
+  "lint-staged": {
+    "backend/**/*.{js,ts}": [
+      "npm --prefix backend run lint",
+      "npm --prefix backend run format"
+    ],
+    "frontend/**/*.{js,ts,jsx,tsx}": [
+      "npm --prefix frontend run lint",
+      "npm --prefix frontend run format"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Aiiyuu/event-management/issues"
+  },
+  "homepage": "https://github.com/Aiiyuu/event-management#readme",
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2"
+  }
+}
