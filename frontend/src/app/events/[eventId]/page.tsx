@@ -7,6 +7,7 @@ import { useEventsStore } from '@/store/events';
 import { RecommendationsSlider } from './components/RecommendationsSlider';
 import { EventDetailContent } from './components/EventDetailContent';
 import { Event, EventDetailResponse } from '@/types/events';
+import { EventMap } from './components/EventMap';
 
 export default function EventDetailPage({ params }: { params: Promise<{ eventId: string }> }) {
   const { eventId } = use(params);
@@ -45,6 +46,8 @@ export default function EventDetailPage({ params }: { params: Promise<{ eventId:
           onUpdate={updateEvent}
           onDelete={handleDelete}
         />
+
+        <EventMap location={eventData.location} />
 
         <Divider />
 
